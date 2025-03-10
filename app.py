@@ -18,8 +18,12 @@ if LLAMA_API_KEY:
     parser = LlamaParse(api_key=LLAMA_API_KEY, result_type="markdown")
 
 # File Uploader
-uploaded_file = st.file_uploader("Upload a document", type=["pdf", "docx", "txt"])
-
+uploaded_file = st.file_uploader(
+    "Upload a document",
+    type=["pdf", "docx", "txt"],
+    key="file_uploader",  # Add unique key
+    help="Choose a document to extract text."
+)
 # Initialize extracted_text to prevent undefined variable errors
 extracted_text = ""
 
