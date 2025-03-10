@@ -4,7 +4,7 @@ from llama_parse import LlamaParse
 
 
 # Set API Key for LlamaParse
-os.environ["LLAMA_CLOUD_API_KEY"] = "llx-PX50mTXExqVsfgGLuDqCYN1BaGSCF8x19t58ReTeRusKWeIh"  # 🔴 Replace with your actual API key
+os.environ["LLAMA_CLOUD_API_KEY"] = "your_api_key"  # 🔴 Replace with your actual API key
 
 # Streamlit Page Config
 st.set_page_config(page_title="Document Extractor", layout="wide")
