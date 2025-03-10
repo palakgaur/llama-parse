@@ -25,14 +25,17 @@ if uploaded_file is not None:
 
     # Extract text using LlamaParse
     with st.spinner("Extracting text... ⏳"):
-        parser = LlamaParse(result_type="markdown")
-        documents = parser.load_data(temp_file_path)
-
-    extracted_text = "\n\n".join([doc.text for doc in documents])
-
-    # Display Extracted Text
-    st.success("✅ Text Extracted Successfully!")
-    st.text_area("📜 Extracted Text", extracted_text, height=300)
+        try:
+            parser = LlamaParse(api_key=LLAMA_API_KEY, result_type="markdown")
+            documents = parser.load_data(temp_file_path)
+            
+            if not documents:
+                st.error("🚨 LlamaParse returned an empty response!")
+            else:
+                extracted_text = "\n\n".join([doc.text for doc in documents])
+                st.text_area("📜 Extracted Text", extracted_text, height=300)
+        except Exception as e:
+            st.error(f"⚠️ Error extracting text: {str(e)}")
 
     # Save Extracted Content to Markdown
     md_file_path = "document.md"
