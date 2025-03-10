@@ -8,8 +8,6 @@ LLAMA_API_KEY = os.getenv("LLAMA_CLOUD_API_KEY", "")
 # Display API Key Status
 if not LLAMA_API_KEY:
     st.error("⚠️ Missing API Key! Set 'LLAMA_CLOUD_API_KEY' as an environment variable.")
-else:
-    st.success("✅ API Key Loaded Successfully!")
 
 # Initialize LlamaParse if API key is present
 parser = None
