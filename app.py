@@ -11,14 +11,6 @@ LLAMA_API_KEY = os.getenv("LLAMA_CLOUD_API_KEY", "")
 if not LLAMA_API_KEY:
     st.error("⚠️ Missing API Key! Set 'LLAMA_CLOUD_API_KEY' as an environment variable.")
 
-st.markdown(
-    "<h1 style='text-align: center; color: #6C63FF;'>📄 LlamaParse Document Extractor</h1>",
-    unsafe_allow_html=True,
-)
-st.markdown(
-    "<h5 style='text-align: center;'>Upload your document and extract its text seamlessly! 🚀</h5>",
-    unsafe_allow_html=True,
-)
 
 # Initialize LlamaParse if API key is present
 parser = None
