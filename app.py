@@ -60,3 +60,4 @@ if uploaded_file is not None:
                 file_name="extracted_text.md",
                 mime="text/markdown",
             )
+            os.remove(temp_file_path)
